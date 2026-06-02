@@ -1,0 +1,285 @@
+/* ==========================================
+   VARIÁVEIS DE CORES DO PROFESSOR (ADAPTADAS PARA O DESIGN)
+   ========================================== */
+:root {
+    --cor-bg-pagina: #b8d3eb; /* Azul claro do fundo do Canva */
+    --cor-texto-geral: #000000;
+    --cor-widget-gradiente-inicio: #ffffff;
+    --cor-winget--gradiente-fim: #f0f4f8;
+    --cor-winget-sombra: rgba(0, 0, 0, 0.1);
+    --cor-input-bg: #e2e8f0;
+    --cor-input-placeholder: #64748b;
+    --cor-botao-bg: #3b82f6;
+    --cor-rodape-bg: #e2e8f0;
+    --border-style: 2px solid #000; /* Borda preta estilo HQ do Canva */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    color: var(--cor-texto-geral);
+}
+
+body {
+    background-color: var(--cor-bg-pagina);
+    color: var(--cor-texto-geral);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* ==========================================
+   ESTRUTURA GERAL DA PÁGINA (DESIGN DO CANVA)
+   ========================================== */
+.navbar {
+    width: 100%;
+    background-color: #dbeafe;
+    border-bottom: var(--border-style);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    text-decoration: none;
+}
+
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.logo-img{
+    width: 100px;
+    height: 100px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.right-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.search-bar {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.banner {
+    width: 100%;
+    max-width: 1200px;
+    height: 150px;
+    background: linear-gradient(to right, #87CEEB, #E0F6FF);
+    border: var(--border-style);
+    margin-top: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    background-image: url('img/banner.gif');
+    background-size: cover;
+    background-position: center;
+}
+
+.main-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px 0;
+}
+
+.left-column, .right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.card {
+    background-color: #f8fafc;
+    border: var(--border-style);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.forecast-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.forecast-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    border-bottom: 1px dashed #ccc;
+    padding-bottom: 10px;
+}
+
+/* ==========================================
+   CÓDIGO DO WIDGET DO PROFESSOR 
+   ========================================== */
+.widget-clima {
+    background: linear-gradient(135deg, var(--cor-widget-gradiente-inicio) 0%, var(--cor-winget--gradiente-fim) 100%);
+    width: 100%;
+    padding: 30px;
+    border: var(--border-style);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px var(--cor-winget-sombra);
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    transition: transform 0.3s ease;
+}
+
+.widget-clima:hover {
+    transform: translateY(-5px);
+}
+
+.busca {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.busca input {
+    flex: 1;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    background-color: var(--cor-input-bg);
+    color: var(--cor-texto-geral);
+    outline: none;
+    font-size: 14px;
+}
+
+.busca input::placeholder {
+    color: var(--cor-input-placeholder);
+}
+
+.busca button {
+    border: none;
+    background-color: var(--cor-botao-bg);
+    color: white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#nome-cidade {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.widget-corpo {
+    text-align: center;
+}
+
+.icone {
+    font-size: 80px;
+    margin-bottom: 10px;
+    filter: drop-shadow(0 5px 10px rgba(0,0,0,0.2));
+}
+
+.temperatura-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#valor-temp {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.unidade {
+    font-size: 24px;
+    font-weight: 400;
+    margin-top: 5px;
+}
+
+#descricao-clima {
+    font-size: 16px;
+    font-weight: 300;
+    text-transform: capitalize;
+    margin-top: 5px;
+    opacity: 0.8;
+}
+
+.widget-footer {
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--cor-rodape-bg);
+    padding: 15px 20px;
+    border-radius: 15px;
+    margin-top: 10px;
+}
+
+.info-extra {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.info-label {
+    font-size: 12px;
+    opacity: 0.8;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.info-valor {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.chart-mockup {
+    width: 100%;
+    height: 50vh;
+    background: url(img/grafico.png) center/contain no-repeat;
+}
+
+.side-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.side-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
