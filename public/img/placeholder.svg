@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-labelledby="title">
+  <title id="title">Imagem indisponivel</title>
+  <rect width="400" height="400" fill="#454851"/>
+  <path d="M90 290l72-82 52 56 38-42 58 68H90z" fill="#2d5482"/>
+  <circle cx="265" cy="145" r="30" fill="#b7b9bf"/>
+  <text x="200" y="345" fill="#f5f5f5" font-family="Arial,sans-serif" font-size="22" text-anchor="middle">Imagem indisponivel</text>
+</svg>
