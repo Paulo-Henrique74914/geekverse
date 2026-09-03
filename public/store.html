@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GeekVerse Store</title>
+
+    <link rel="stylesheet" href="store.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         CABEÇALHO
+    ========================== -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            <a href="store.html">
+            <span class="logo-text"><img src="img/logo.png" alt="Geek Verse" width="40%" height="40%"></span>
+            </a>
+        </div>
+
+        <div class="barra-pesquisa">
+            <input
+                type="text"
+                id="busca"
+                placeholder="O que você procura?"
+            >
+
+            <button id="limparBusca" type="button">
+                ×
+            </button>
+        </div>
+
+        <div class="acoes-topo">
+
+            <button class="icone-topo" type="button">
+                👤
+            </button>
+
+            <button class="icone-topo" type="button">
+                ♥
+            </button>
+
+            <button
+                id="btnCarrinho"
+                class="icone-topo carrinho-topo"
+                type="button"
+            >
+                🛒
+
+                <span id="contadorCarrinho">
+                    0
+                </span>
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         MENU
+    ========================== -->
+
+    <nav class="site-nav">
+
+        <a href="/public/index.html">
+            HOME
+        </a>
+
+        <a href="/public/clima.html">
+            CLIMA
+        </a>
+
+        <a class="ativo" href="/public/store.html">
+            FIGURES
+        </a>
+
+        <a href="#">
+            ANIMES
+        </a>
+
+        <a href="/public/sports.html">
+            ESPORTES
+        </a>
+
+    </nav>
+
+
+    <!-- =========================
+         CONTEÚDO
+    ========================== -->
+
+    <main class="layout-loja">
+
+
+        <!-- =====================
+             FILTROS
+        ====================== -->
+
+        <aside class="filtros">
+
+            <h2>
+                FILTROS
+            </h2>
+
+
+            <div class="grupo-filtro">
+
+                <h3>
+                    ANIMES
+                </h3>
+
+                <div id="filtroCategorias">
+
+                </div>
+
+            </div>
+
+
+            <div class="grupo-filtro">
+
+                <h3>
+                    PREÇOS
+                </h3>
+
+                <label>
+                    <input
+                        type="radio"
+                        name="preco"
+                        value="todos"
+                        checked
+                    >
+
+                    Todos
+                </label>
+
+                <label>
+                    <input
+                        type="radio"
+                        name="preco"
+                        value="0-100"
+                    >
+
+                    Até R$ 100
+                </label>
+
+                <label>
+                    <input
+                        type="radio"
+                        name="preco"
+                        value="100-250"
+                    >
+
+                    R$ 100 — R$ 250
+                </label>
+
+                <label>
+                    <input
+                        type="radio"
+                        name="preco"
+                        value="250-500"
+                    >
+
+                    R$ 250 — R$ 500
+                </label>
+
+                <label>
+                    <input
+                        type="radio"
+                        name="preco"
+                        value="500+"
+                    >
+
+                    Acima de R$ 500
+                </label>
+
+            </div>
+
+        </aside>
+
+
+        <!-- =====================
+             CATÁLOGO
+        ====================== -->
+
+        <section class="catalogo">
+
+            <div class="cabecalho-catalogo">
+
+                <div>
+
+                    <span>
+                        CATÁLOGO
+                    </span>
+
+                    <h1>
+                        PRODUTOS EM DESTAQUE
+                    </h1>
+
+                </div>
+
+
+                <select id="ordenacao">
+
+                    <option value="padrao">
+                        Padrão
+                    </option>
+
+                    <option value="menor">
+                        Menor preço
+                    </option>
+
+                    <option value="maior">
+                        Maior preço
+                    </option>
+
+                    <option value="az">
+                        Nome: A → Z
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div
+                id="status"
+                class="status"
+            >
+                Carregando produtos...
+            </div>
+
+
+            <div
+                id="resultadoBusca"
+                class="resultado-busca"
+            >
+            </div>
+
+
+            <!--
+                Os carrosséis serão criados
+                automaticamente pelo JavaScript
+            -->
+
+            <div
+                id="produtos"
+                class="catalogo-secoes"
+            >
+            </div>
+
+
+            <div
+                id="vazio"
+                class="mensagem-vazia"
+                hidden
+            >
+
+                <strong>
+                    Nenhum produto encontrado.
+                </strong>
+
+                <span>
+                    Tente modificar os filtros.
+                </span>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         PAINEL ADMINISTRATIVO
+         CONTINUA COMPATÍVEL COM
+         SUA API
+    ========================== -->
+
+    <section
+        id="painel-admin"
+        class="painel-admin"
+        hidden
+    >
+
+        <h2>
+            Cadastrar novo produto
+        </h2>
+
+        <form id="form-produto">
+
+            <input
+                type="text"
+                id="novo-titulo"
+                placeholder="Nome do produto"
+                required
+            >
+
+            <input
+                type="number"
+                id="novo-preco"
+                step="0.01"
+                min="0.01"
+                placeholder="Preço"
+                required
+            >
+
+            <input
+                type="text"
+                id="novo-categoria"
+                placeholder="Categoria"
+                required
+            >
+
+            <input
+                type="url"
+                id="novo-imagem"
+                placeholder="URL da imagem"
+            >
+
+            <button type="submit">
+                Adicionar à vitrine
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <!-- =========================
+         OVERLAY DO CARRINHO
+    ========================== -->
+
+    <div
+        id="overlay"
+        class="overlay"
+    >
+    </div>
+
+
+    <!-- =========================
+         CARRINHO
+    ========================== -->
+
+    <aside
+        id="painelCarrinho"
+        class="painel-carrinho"
+    >
+
+        <div class="cabecalho-carrinho">
+
+            <div>
+
+                <span>
+                    MINHA CESTA
+                </span>
+
+                <h2>
+                    CARRINHO
+                </h2>
+
+            </div>
+
+            <button
+                id="fecharCarrinho"
+                class="fechar-carrinho"
+                type="button"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <div
+            id="itensCarrinho"
+            class="itens-carrinho"
+        >
+        </div>
+
+
+        <div class="resumo-carrinho">
+
+            <div class="linha-resumo">
+
+                <span>
+                    SUBTOTAL:
+                </span>
+
+                <strong id="subtotalCarrinho">
+                    R$ 0,00
+                </strong>
+
+            </div>
+
+
+            <div class="linha-resumo">
+
+                <span>
+                    CUPOM:
+                </span>
+
+                <div class="cupom">
+
+                    <input
+                        id="cupom"
+                        placeholder="Cupom"
+                    >
+
+                    <button
+                        id="aplicarCupom"
+                        type="button"
+                    >
+                        OK
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="linha-resumo total">
+
+                <span>
+                    TOTAL:
+                </span>
+
+                <strong id="totalCarrinho">
+                    R$ 0,00
+                </strong>
+
+            </div>
+
+
+            <button
+                id="finalizarCompra"
+                class="btn-finalizar"
+                type="button"
+            >
+                FINALIZAR COMPRA
+            </button>
+
+
+            <button
+                id="limparCarrinho"
+                class="btn-limpar"
+                type="button"
+            >
+                LIMPAR CARRINHO
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <div
+        id="toast"
+        class="toast"
+    >
+    </div>
+
+
+    <footer class="rodape">
+
+        <span>
+            GEEKVERSE STORE
+        </span>
+
+        <span>
+            FIGURES • ANIMES • GAMES • HQs
+        </span>
+
+    </footer>
+
+
+    <script src="store.js" defer></script>
+
+</body>
+
+</html>
