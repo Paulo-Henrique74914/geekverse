@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeekVerse - Previsão do Tempo</title>   
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap">
+    <link rel="stylesheet" href="clima.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-links">
+            <a href="/public/index.html">HOME</a>
+            <a href="/public/clima.html">CLIMA</a>
+            <a href="/public/sports.html">ESPORTES</a>
+            <a href="/public/store.html">FIGURES</a>
+            <a href="animes.html">ANIMES</a>
+        </div>
+        <div class="logo-container">
+            <img class="logo-img" src="/public/img/logo.png" alt="Logo GeekVerse">
+            <div class="logo"><strong>GEEK VERSE</strong></div>
+        </div>
+        <div class="right-section">
+            <input type="text" placeholder="Pesquisar..." class="search-bar">
+            <div class="user-icons">👤 🤍 🛒</div>
+        </div>
+    </nav>
+
+    <div class="banner"></div>
+
+    <div class="main-container">
+        <div class="left-column">
+            
+            <main class="widget-clima">
+                <header class="widget-header">
+                    <div class="busca">
+                        <input type="text" id="input-cidade" placeholder="Digite uma cidade...">
+                        <button id="btn-buscar">🔎</button>
+                    </div>
+                    <h2 id="nome-cidade">Aguardando Local...</h2>
+                </header>
+                <section class="widget-corpo">
+                    <div class="icone" id="icone-clima">☁️</div>
+                    <div class="temperatura-container">
+                        <h1 id="valor-temp">--</h1>
+                        <span class="unidade">°C</span>
+                    </div>
+                    <p id="descricao-clima">Carregando dados da API...</p>
+                </section>
+                <footer class="widget-footer">
+                    <div class="info-extra">
+                        <span class="info-label">💧 Umidade</span>
+                        <span class="info-valor" id="valor-umidade">--%</span>
+                    </div>
+                    <div class="info-extra">
+                        <span class="info-label">🍃 Vento</span>
+                        <span class="info-valor" id="valor-vento">-- km/h</span>
+                    </div>
+                </footer>
+            </main>
+
+            <div class="card">
+                <div class="forecast-list">
+                    <div class="forecast-item"><span>25°C ☀️ HOJE</span> <span>💧 15.0mm - 90%</span></div>
+                    <div class="forecast-item"><span>22°C ☁️ AMANHÃ</span> <span>💧 15.0mm - 90%</span></div>
+                    <div class="forecast-item"><span>20°C 🌧️ QUARTA-FEIRA</span> <span>💧 15.0mm - 90%</span></div>
+                    <div class="forecast-item"><span>24°C 🌤️ QUINTA-FEIRA</span> <span>💧 15.0mm - 90%</span></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Temperatura</h3>
+                <div class="chart-mockup"></div>
+            </div>
+        </div>
+
+        <div class="right-column">
+            <div class="card">
+                <div class="side-list">
+                    <div class="side-item">🥩 <div><strong>CHURRASCO</strong><br><small>Clima Ideal</small></div></div>
+                    <div class="side-item">🦟 <div><strong>MOSQUITO</strong><br><small>Risco Médio</small></div></div>
+                    <div class="side-item">☀️ <div><strong>ÍNDICE UV</strong><br><small>Muito Alto</small></div></div>
+                    <div class="side-item">🍃 <div><strong>QUALIDADE DO AR</strong><br><small>Satisfatório</small></div></div>
+                </div>
+            </div>
+
+            <div class="card" style="text-align: center;">
+                <h3>PREVISÃO JN</h3>
+                <div style="background: #333; color: white; height: 120px; display: flex; align-items: center; justify-content: center; margin-top: 10px;">
+                    <iframe src="https://www.youtube.com/embed/h5MmvZltP3M" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3 style="text-align: center; margin-bottom: 10px;">PROXIMIDADES</h3>
+                <div class="forecast-list">
+                    <div class="forecast-item"><span>LONDRINA-PR</span> <span>28°C</span></div>
+                    <div class="forecast-item"><span>ROLÂNDIA-PR</span> <span>27°C</span></div>
+                    <div class="forecast-item"><span>MARINGÁ-PR</span> <span>29°C</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="clima.js"></script>
+</body>
+</html>
