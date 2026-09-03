@@ -1,0 +1,642 @@
+[
+  {
+    "id": 0,
+    "title": "Ainz Ooal Gown",
+    "price": 1800,
+    "description": "Action Figure Ainz Ooal Gown Overlord Bandai Namco",
+    "category": "Populares",
+    "image": "public/images/ainz.png"
+  },
+  {
+    "id": 1,
+    "title": "Tia Encouraçado",
+    "price": 750,
+    "description": "Armored Titan Attack Titan 1/12 Revoltech Amazing Yamaguchi",
+    "category": "Populares",
+    "image": "public/images/tita-encouraçado.png"
+  },
+  {
+    "id": 2,
+    "title": "Frieren",
+    "price": 650,
+    "description": "Sousou no Frieren - Frieren (Good Smile Company)",
+    "category": "Populares",
+    "image": "public/images/frieren.png"
+  },
+  {
+    "id": 3,
+    "title": "Inui Sajuna",
+    "price": 300,
+    "description": "Inui Sajuna, em pé, com mangas curtas brancas, medindo 24 cm (9,4 polegadas).",
+    "category": "Populares",
+    "image": "public/images/inui.png"
+  },
+  {
+    "id": 4,
+    "title": "Vegetto Base",
+    "price": 350,
+    "description": "Namco Limited Dragon Ball Super Strongest Union Fighter Vegetto Figure Final Kamehameha ver 6",
+    "category": "Populares",
+    "image": "public/images/vegetto-base.png"
+  },
+  {
+    "id": 5,
+    "title": "Zoro",
+    "price": 260,
+    "description": "Roronoa Zoro Egghead Masterlise Ichiban Kuji Bandai",
+    "category": "Populares",
+    "image": "public/images/zoro.png"
+  },
+  {
+    "id": 6,
+    "title": "Hatsune Miku Sakura",
+    "price": 350,
+    "description": "HATSUNE MIKU SAKURA VER. AMP TAITO lacrado",
+    "category": "Populares",
+    "image": "public/images/hatsune-miku-sakura.png"
+  },
+  {
+    "id": 7,
+    "title": "Satoru",
+    "price": 299.99,
+    "description": "GOJO SATORU DE ÓCULOS JUJUTSU KAISEN KING OF ARTIST BANPRESTO lacrado",
+    "category": "Populares",
+    "image": "public/images/satoru.png"
+  },
+  {
+    "id": 8,
+    "title": "Kaiju N.8",
+    "price": 520.5,
+    "description": "Kaiju No. 8 hibino kafuka -Monster form (17 cm)",
+    "category": "Promoções",
+    "image": "public/images/kaiju-N-8.png"
+  },
+  {
+    "id": 9,
+    "title": "Batman Absoluto",
+    "price": 850,
+    "description": "Batman Absoluto 1/6 Comic Action Figure (37cm)",
+    "category": "Promoções",
+    "image": "public/images/batman-absoluto.png"
+  },
+  {
+    "id": 10,
+    "title": "Joseph Joestar",
+    "price": 650,
+    "description": "JoJo's Bizarre Adventure Battle Tendency Joseph Joestar 1/8 Figure",
+    "category": "Promoções",
+    "image": "public/images/joseph.png"
+  },
+  {
+    "id": 11,
+    "title": "Ichigo",
+    "price": 325.35,
+    "description": "Bleach: Thousand-Year Blood War - Ichigo Kurosaki -Dual Zangetsu",
+    "category": "Promoções",
+    "image": "public/images/ichigo.png"
+  },
+  {
+    "id": 12,
+    "title": "Echidna",
+    "price": 260,
+    "description": "Re:Zero kara Hajimeru Isekai Seikatsu Echidna - Coreful Figure",
+    "category": "Promoções",
+    "image": "public/images/echidna.png"
+  },
+  {
+    "id": 13,
+    "title": "Lanterna Verde",
+    "price": 1.499,
+    "description": "Estátua Lanterna Verde Unleashed DC Comics - Art Scale 1/10",
+    "category": "Promoções",
+    "image": "public/images/green-lantern.png"
+  },
+  {
+    "id": 14,
+    "title": "Misa",
+    "price": 84.99,
+    "description": "Death Note Misa 1:10 Scale PVC Action Figure",
+    "category": "Promoções",
+    "image": "public/images/misa.png"
+  },
+  {
+    "id": 15,
+    "title": "Rimuru",
+    "price": 300,
+    "description": "That Time I Got Reincarnated as a Slime Ranga - Rimuru",
+    "category": "Promoções",
+    "image": "public/images/rimuru.png"
+  },
+  {
+    "id": 16,
+    "title": "Tanya Von",
+    "price": 650,
+    "description": "Saga of Tanya The Evil: Tanya von Degurechaff 1:7",
+    "category": "Promoções",
+    "image": "public/images/tanya-von.png"
+  },
+  {
+    "id": 17,
+    "title": "Midoriya",
+    "price": 200,
+    "description": "[PRÉ-VENDA MARÇO/26 - 50%] IZUKU MIDORIYA DEKU DARK MY HERO ACADEMIA MAXIAMTIC 100% ORIGINAL LACRADO",
+    "category": "Promoções",
+    "image": "public/images/deku-transformado.png"
+  },
+  {
+    "id": 18,
+    "title": "Ai Hoshino",
+    "price": 470,
+    "description": "Ai Hoshino Aqua Float Girls Taito Action Figure",
+    "category": "Animes-Diversos",
+    "image": "public/images/aihoshino.png"
+  },
+  {
+    "id": 19,
+    "title": "Zero Two",
+    "price": 700,
+    "description": "Taito Darling in The FRANXX Coreful Figure Zero Two Uniform",
+    "category": "Animes-Diversos",
+    "image": "public/images/zero-two.png"
+  },
+  {
+    "id": 20,
+    "title": "Shinobu",
+    "price": 540.5,
+    "description": "KOCHO SHINOBU DEMON SLAYER LUMINASTA SEGA LACRADO",
+    "category": "Animes-Diversos",
+    "image": "public/images/shinobu.png"
+  },
+  {
+    "id": 21,
+    "title": "Esdeath",
+    "price": 840,
+    "description": "Esdeath - Akame Ga Kill! - Em Resina 12k - Tinta Importada",
+    "category": "Animes-Diversos",
+    "image": "public/images/esdeath.png"
+  },
+  {
+    "id": 22,
+    "title": "Hanayama",
+    "price": 250,
+    "description": "KAORU HANAYAMA - BAKI HANMA scale 1/12",
+    "category": "Animes-Diversos",
+    "image": "public/images/hanayama.png"
+  },
+  {
+    "id": 23,
+    "title": "Hanako Kun",
+    "price": 75,
+    "description": "Hanako-Kun Figure Yugi Amane Statue - 13cm Sitting Pose Anime Figure Model Handmade Collectible Desktop Decoration Gifts",
+    "category": "Animes-Diversos",
+    "image": "public/images/hanako-kun.png"
+  },
+  {
+    "id": 24,
+    "title": "Kakashi",
+    "price": 325.35,
+    "description": "Banpresto Naruto Shippuden Grandista Hatake Kakashi (dimensões do Manga), boneco colecionável de 30 cm de altura",
+    "category": "Animes-Diversos",
+    "image": "public/images/kakashi.png"
+  },
+  {
+    "id": 25,
+    "title": "Maka",
+    "price": 650,
+    "description": "Soul Eater - Maka Albarn - Soul Eater Evans - Pop Up Parade (Good Smile Company)",
+    "category": "Animes-Diversos",
+    "image": "public/images/maka.png"
+  },
+  {
+    "id": 26,
+    "title": "Chrollo Lucilfer",
+    "price": 437.99,
+    "description": "HUNTERXHUNTER ICHIBAN KUJI- REVENGE Of SCARLET B Prize CHROLLO LUCILFER",
+    "category": "Animes-Diversos",
+    "image": "public/images/lucilfer.png"
+  },
+  {
+    "id": 27,
+    "title": "Bulma",
+    "price": 890,
+    "description": "BULMA ROUPA DB CLÁSSICO DRAGON BALL GLITTER AND GLAMOURS BANPRESTO lacrado",
+    "category": "Anime-Girls",
+    "image": "public/images/bulma.png"
+  },
+  {
+    "id": 28,
+    "title": "Reze",
+    "price": 750,
+    "description": "REZE BOMB GIRL BUNNY VER. CHAINSAW MAN BICUTE BUNNIES FURYU LACRADO",
+    "category": "Anime-Girls",
+    "image": "public/images/reze.png"
+  },
+  {
+    "id": 29,
+    "title": "Rem",
+    "price": 500.5,
+    "description": "Rem Figura, formato de orelha de gato empregada (Re: Zero) figura 23 cm/9 polegadas",
+    "category": "Anime-Girls",
+    "image": "public/images/rem.png"
+  },
+  {
+    "id": 30,
+    "title": "Nami",
+    "price": 655,
+    "description": "ONE PIECE STAMPEDE GLITTER & GLAMOURS Nami 22 CM",
+    "category": "Anime-Girls",
+    "image": "public/images/nami.png"
+  },
+  {
+    "id": 31,
+    "title": "Nezuko chan",
+    "price": 260,
+    "description": "Demon Slayer Kimetsu No Yaiba - Nezuko Kamado Demon slayer",
+    "category": "Anime-Girls",
+    "image": "public/images/nezuko.png"
+  },
+  {
+    "id": 32,
+    "title": "Himiko Toga",
+    "price": 200,
+    "description": "Action Figure My Hero Academia Himiko Toga The Evil Villains",
+    "category": "Anime-Girls",
+    "image": "public/images/himiko-toga.png"
+  },
+  {
+    "id": 33,
+    "title": "Makima",
+    "price": 1599.99,
+    "description": "MAKIMA CHAINSAW MAN EXCOOD CREATIVE FURYU",
+    "category": "Anime-Girls",
+    "image": "public/images/makima.png"
+  },
+  {
+    "id": 34,
+    "title": "Yor Forger",
+    "price": 1800,
+    "description": "Boneco Articulado Spy x Family Yor forger 17cm",
+    "category": "Anime-Girls",
+    "image": "public/images/yor.png"
+  },
+  {
+    "id": 35,
+    "title": "Akane Kurokawa",
+    "price": 159.9,
+    "description": "Sega DDC Cranenking Figure  Akane Kurokawa-Oshi no Ko",
+    "category": "Anime-Girls",
+    "image": "public/images/akane.png"
+  },
+  {
+    "id": 36,
+    "title": "Uraraka Ochaco",
+    "price": 650,
+    "description": "Ochaco Urraka My Hero Academia S.h. Figuarts Bandai",
+    "category": "Anime-Girls",
+    "image": "public/images/uraraka.png"
+  },
+  {
+    "id": 37,
+    "title": "Tamaki",
+    "price": 1800,
+    "description": "Kotobukiya ArtFX-J Fire Force Tamaki Kotatsu 1/8 Scale",
+    "category": "Anime-Girls",
+    "image": "public/images/tamaki.png"
+  },
+  {
+    "id": 38,
+    "title": "Makima Bunny",
+    "price": 650.5,
+    "description": "MAKIMA BUNNY CHAINSAW MAN BICUTE BUNNIES FURYU VER.2 LACRADA",
+    "category": "Bunny",
+    "image": "public/images/makima-bunny.png"
+  },
+  {
+    "id": 39,
+    "title": "Echidna Bunny",
+    "price": 1000,
+    "description": "Estátua Echidna 20cm Taito Re Zero Starting Life In Another World",
+    "category": "Bunny",
+    "image": "public/images/echidna-bunny.png"
+  },
+  {
+    "id": 40,
+    "title": "May Bunny",
+    "price": 650,
+    "description": "MAI SAKURAJIMA BUNNY GIRL SENPAI BUNNY VER.DESKTOP DECORATE COLLECTIONS SEGA lacrado",
+    "category": "Bunny",
+    "image": "public/images/mai-bunny.png"
+  },
+  {
+    "id": 41,
+    "title": "Power Bunny",
+    "price": 425,
+    "description": "POWER BUNNY CHAINSAW MAN BICUTE BUNNIES VER.2 ROUND 1 FURYU LACRADO",
+    "category": "Bunny",
+    "image": "public/images/power-bunny.png"
+  },
+  {
+    "id": 42,
+    "title": "FuRyu Alya Bunny",
+    "price": 288,
+    "description": "FuRyu Corporation-Alya Sometimes Hides Her",
+    "category": "Bunny",
+    "image": "public/images/Alya-Furyu.png"
+  },
+  {
+    "id": 43,
+    "title": "Sega Alya Bunny",
+    "price": 900,
+    "description": "Alya Bunny Luminasta SEGA Action Figure",
+    "category": "Bunny",
+    "image": "public/images/Alya-Sega.png"
+  },
+  {
+    "id": 44,
+    "title": "Miku Bunny",
+    "price": 259.99,
+    "description": "Furyu Hatsune Miku Bunny Girl Premium Figure",
+    "category": "Bunny",
+    "image": "public/images/Miku-bunny.png"
+  },
+  {
+    "id": 45,
+    "title": "Marin Bunny",
+    "price": 185,
+    "description": "MARIN KITAGAWA MY DRESS UP DARLING T-MOST BUNNY VER.TAITO 100% ORIGINAL LACRADO",
+    "category": "Bunny",
+    "image": "public/images/Marin-Bunny.png"
+  },
+  {
+    "id": 46,
+    "title": "Miles Morales",
+    "price": 280,
+    "description": "Miles Morales Boneco Articulado Homem Aranha",
+    "category": "Filmes",
+    "image": "public/images/Miles-Morales.png"
+  },
+  {
+    "id": 47,
+    "title": "Motoqueiro Fantasma",
+    "price": 15000,
+    "description": "Ghost Rider (Classic Variant) Premium Format Figure",
+    "category": "Filmes",
+    "image": "public/images/motoqueiro-fantasma.png"
+  },
+  {
+    "id": 48,
+    "title": "Super-Man and Krypto",
+    "price": 4499.99,
+    "description": "Superman and Krypto Superman - 1/6 Scale",
+    "category": "Filmes",
+    "image": "public/images/Superman-Krypto.png"
+  },
+  {
+    "id": 49,
+    "title": "Darth Vader",
+    "price": 5000,
+    "description": "Estátua Darth Vader Mythos Star Wars – Premium Format",
+    "category": "Filmes",
+    "image": "public/images/Darth-Vader.png"
+  },
+  {
+    "id": 50,
+    "title": "SPIDER GWEN ",
+    "price": 348,
+    "description": "SPIDER GWEN LUMINASTA MOVIE SEGA 100% ORIGINAL LACRADO",
+    "category": "Filmes",
+    "image": "public/images/Spider-gwen.png"
+  },
+  {
+    "id": 51,
+    "title": "Flash McFarlane Toys ",
+    "price": 480,
+    "description": "Flash PVC de 30 cm McFarlane Toys",
+    "category": "Filmes",
+    "image": "public/images/Flash.png"
+  },
+  {
+    "id": 52,
+    "title": "Iron Man Mark VII Open Armor",
+    "price": 4999.99,
+    "description": "Figura Iron Man Mark VII Open Armor Version - Marvel - Sixth Scale - Hot Toys",
+    "category": "Filmes",
+    "image": "public/images/Iron-man-mark-VII.png"
+  },
+  {
+    "id": 53,
+    "title": "DeadPoll",
+    "price": 799.99,
+    "description": "Figura Deadpool - Deadpool & Wolverine - S.H.Figuarts - Bandai",
+    "category": "Filmes",
+    "image": "public/images/DeadPoll.png"
+  },
+  {
+    "id": 54,
+    "title": "Leon S. Kennedy",
+    "price": 500,
+    "description": "Resident Evil 6 Leon S. Kennedy",
+    "category": "Games",
+    "image": "public/images/Leon.png"
+  },
+  {
+    "id": 55,
+    "title": "Omen",
+    "price": 540,
+    "description": "OMEN VALORANT POP UP PARADE SP VER. GOODSMILE COMPANY LACRADO",
+    "category": "Games",
+    "image": "public/images/Omen.png"
+  },
+  {
+    "id": 56,
+    "title": "Nier automata",
+    "price": 799.99,
+    "description": "2B NIER AUTOMATA POP UP PARADE GOODSMILE COMPANY LACRADO",
+    "category": "Games",
+    "image": "public/images/Nier.png"
+  },
+  {
+    "id": 57,
+    "title": "Chun-Li",
+    "price": 189.99,
+    "description": "Street Fighter Chun-Li -Outfit 2 14,5 cm",
+    "category": "Games",
+    "image": "public/images/Chun-Li.png"
+  },
+  {
+    "id": 58,
+    "title": "Cappie",
+    "price": 799.99,
+    "description": "Cappie figure for 3d printing",
+    "category": "Games",
+    "image": "public/images/Cappie.png"
+  },
+  {
+    "id": 59,
+    "title": "David Cyberpunk",
+    "price": 540,
+    "description": "DAVID MARTINEZ CYBERPUNK EDGERUNNERS POP UP PARADE GOODSMILE COMPANY lacrado",
+    "category": "Games",
+    "image": "public/images/David-Cyberpunk.png"
+  },
+  {
+    "id": 60,
+    "title": "CupHead",
+    "price": 540,
+    "description": "Cuphead Funko Action Figure - Cuphead",
+    "category": "Games",
+    "image": "public/images/CupHead.png"
+  },
+  {
+    "id": 61,
+    "title": "Moondrop",
+    "price": 100,
+    "description": "Moondrop action figure ",
+    "category": "Games",
+    "image": "public/images/Moondrop.png"
+  },
+  {
+    "id": 62,
+    "title": "Shiny Umbreon Hallowen",
+    "price": 85,
+    "description": "Action Figure - Pokemon Umbreon Shiny Especial Halloween",
+    "category": "Animais",
+    "image": "public/images/Umbreon-Shiny.png"
+  },
+  {
+    "id": 63,
+    "title": "Estátua Dilofossauro - Jurassic World - Art Scale 1/10",
+    "price": 999.99,
+    "description": "Estátua Dilofossauro - Jurassic World - Art Scale 1/10",
+    "category": "Animais",
+    "image": "public/images/Dilofossauro.png"
+  },
+  {
+    "id": 64,
+    "title": "Estátua Dimetrodon - Jurassic World - Art Scale 1/10",
+    "price": 1099.99,
+    "description": "Estátua Dimetrodon - Jurassic World - Art Scale 1/10",
+    "category": "Animais",
+    "image": "public/images/Dimetridon.png"
+  },
+  {
+    "id": 65,
+    "title": "Jurassic World: Dominion Blue - Art Scale 1/10",
+    "price": 368,
+    "description": "Estátua Blue - Jurassic World: Dominion - Art Scale 1/10",
+    "category": "Animais",
+    "image": "public/images/blue.png"
+  },
+  {
+    "id": 66,
+    "title": "Kurama - Naruto Shippuden",
+    "price": 334.99,
+    "description": "Estátua Kurama II (Ver. B) – Naruto Shippuden",
+    "category": "Animais",
+    "image": "public/images/kurama.png"
+  },
+  {
+    "id": 67,
+    "title": "Baby Kaiju",
+    "price": 334.99,
+    "description": "Figura Baby Kaiju - Superman Movie - Dc Directc Vinyl Figure - McFarlane",
+    "category": "Animais",
+    "image": "public/images/baby-kaiju.png"
+  },
+  {
+    "id": 68,
+    "title": "Donatello (Black and White Variant)",
+    "price": 1199.99,
+    "description": "Estátua Donatello (Black and White Variant) TMNT - BDS Art Scale 1/10 - Iron Studios",
+    "category": "Animais",
+    "image": "public/images/Donatelo-B&W.png"
+  },
+  {
+    "id": 69,
+    "title": "Michelangelo (Black and White Variant)",
+    "price": 1199.99,
+    "description": "Estátua Donatello (Black and White Variant) TMNT - BDS Art Scale 1/10 - Iron Studios",
+    "category": "Animais",
+    "image": "public/images/Michelangelo-B&W.png"
+  },
+  {
+    "id": 70,
+    "title": "Kong The New Empire",
+    "price": 259.99,
+    "description": "Estátua Kong - GodzillaxKong The New Empire Monsters Roar Attack - Banpresto - Bandai ",
+    "category": "Animais",
+    "image": "public/images/Kong.png"
+  },
+  {
+    "id": 71,
+    "title": "Guerreiras do K-Pop - Rumi",
+    "price": 149.99,
+    "description": "Boneco Funko Pop! Guerreiras do K-Pop - Rumi ",
+    "category": "Funko Pop!",
+    "image": "public/images/Rumi.png"
+  },
+  {
+    "id": 72,
+    "title": "The Office - Michael",
+    "price": 149.99,
+    "description": "Boneco Funko Pop! Sayings The Office - Michael",
+    "category": "Funko Pop!",
+    "image": "public/images/Michael.png"
+  },
+  {
+    "id": 73,
+    "title": "One Piece - Trafalgar Law",
+    "price": 149.99,
+    "description": "Boneco Funko Pop! One Piece - Trafalgar Law ",
+    "category": "Funko Pop!",
+    "image": "public/images/Law.png"
+  },
+  {
+    "id": 74,
+    "title": "Five Nights at Freddys-Ruined Roxy",
+    "price": 99.99,
+    "description": "Boneco Funko Pop! Five Nights at Freddys Ruined Roxy",
+    "category": "Funko Pop!",
+    "image": "public/images/Roxy.png"
+  },
+  {
+    "id": 75,
+    "title": "Chainsaw Man - Power Praia",
+    "price": 94.99,
+    "description": "Boneco Funko Pop! Chainsaw Man - Power Praia ",
+    "category": "Funko Pop!",
+    "image": "public/images/Power.png"
+  },
+  {
+    "id": 76,
+    "title": "Naruto - Madara (Susano'o)",
+    "price": 699.99,
+    "description": "Boneco Funko Pop! Moment Edição Limitada WonderCon 2025 Naruto - Madara (Susano'o) ",
+    "category": "Funko Pop!",
+    "image": "public/images/Madara.png"
+  },
+  {
+    "id": 77,
+    "title": "Guerreiras do K-Pop - Zoey",
+    "price": 149.99,
+    "description": "Boneco Funko Pop! Guerreiras do K-Pop - Zoey ",
+    "category": "Funko Pop!",
+    "image": "public/images/Zoey.png"
+  },
+  {
+    "id": 78,
+    "title": "Homem-Aranha Amigão da Vizinhança",
+    "price": 149.99,
+    "description": "Boneco Funko Pop! Marvel Homem-Aranha Amigão da Vizinhança - Homem-Aranha",
+    "category": "Funko Pop!",
+    "image": "public/images/Spider.png"
+  },
+  {
+    "id": 79,
+    "title": "Dragon Ball Super Broly - Broly",
+    "price": 199.99,
+    "description": "Boneco Funko Pop! Dragon Ball Super Broly - Broly ",
+    "category": "Funko Pop!",
+    "image": "public/images/Broly.png"
+  }
+]
