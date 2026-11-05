@@ -1,0 +1,220 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#54228c">
+  <title>Animes | GeekVerse</title>
+  <link rel="stylesheet" href="geek.css">
+  <script src="geek.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-top">
+      <a class="brand" href="/index.html" aria-label="GeekVerse">
+        <span class="brand-mark">GEEK<span>VERSE</span></span>
+      </a>
+
+      <form class="search" id="anime-search-form" role="search">
+        <input id="anime-search" type="search"
+          placeholder="Buscar animes e personagens..." maxlength="80"
+          aria-label="Buscar animes e personagens">
+        <button type="submit" aria-label="Buscar">⌕</button>
+      </form>
+
+      <nav class="quick-links" aria-label="Atalhos">
+        <a href="/index.html" title="Início">⌂</a>
+        <button id="favorites-toggle" type="button"
+          title="Mostrar favoritos" aria-pressed="false">♥</button>
+        <a href="/store.html" title="Loja">▣</a>
+      </nav>
+    </div>
+
+    <nav class="main-nav" aria-label="Menu principal">
+      <a href="/index.html">Home</a>
+      <a href="/clima.html">Clima</a>
+      <a href="/sports.html">Esportes</a>
+      <a href="/store.html">Figures</a>
+      <a class="active" href="/geek.html">Animes</a>
+    </nav>
+  </header>
+
+  <main class="page-shell">
+    <div class="breadcrumb">
+      <a href="/index.html">INÍCIO</a>
+      <span>/</span>
+      <span>ANIMES | MANGÁS</span>
+    </div>
+
+    <!-- RESULTADOS DA PESQUISA -->
+    <section id="search-results" hidden>
+      <div class="section-heading">
+        <h1 id="search-title">Resultados</h1>
+        <button id="clear-search" class="text-button" type="button">
+          Limpar busca ×
+        </button>
+      </div>
+
+      <div class="search-status">
+        <p id="status-api" role="status" aria-live="polite">
+          Aguardando pesquisa...
+        </p>
+        <span id="total-resultados">—</span>
+      </div>
+
+      <button id="btn-tentar" type="button" hidden>
+        Tentar novamente
+      </button>
+
+      <div id="search-grid" class="anime-grid"
+        aria-busy="false"></div>
+
+      <nav class="anime-pagination" aria-label="Paginação">
+        <button id="btn-anterior" type="button" disabled>
+          ← Anterior
+        </button>
+
+        <p>
+          Página <strong id="pagina-atual">—</strong>
+          de <strong id="total-paginas">—</strong>
+        </p>
+
+        <button id="btn-proxima" type="button" disabled>
+          Próxima →
+        </button>
+      </nav>
+    </section>
+
+    <!-- PÁGINA INICIAL DOS ANIMES -->
+    <section class="content-layout" id="home-content">
+      <div class="main-column">
+
+        <section class="anime-section">
+          <div class="section-heading">
+            <h1>Lançamentos de <span id="release-year">2026</span></h1>
+            <div class="carousel-controls">
+              <button data-scroll="releases-track"
+                aria-label="Anterior">‹</button>
+              <button data-scroll-next="releases-track"
+                aria-label="Próximo">›</button>
+            </div>
+          </div>
+
+          <div id="releases-track" class="anime-track">
+            <div class="loading-card">Carregando lançamentos...</div>
+          </div>
+        </section>
+
+        <section class="anime-section">
+          <div class="section-heading">
+            <h2>Recomendações</h2>
+            <div class="carousel-controls">
+              <button data-scroll="recommendations-track"
+                aria-label="Anterior">‹</button>
+              <button data-scroll-next="recommendations-track"
+                aria-label="Próximo">›</button>
+            </div>
+          </div>
+
+          <div id="recommendations-track" class="anime-track">
+            <div class="loading-card">Carregando recomendações...</div>
+          </div>
+        </section>
+
+        <section class="anime-section">
+          <div class="section-heading">
+            <h2>Top personagens mais famosos</h2>
+            <div class="carousel-controls">
+              <button data-scroll="characters-track"
+                aria-label="Anterior">‹</button>
+              <button data-scroll-next="characters-track"
+                aria-label="Próximo">›</button>
+            </div>
+          </div>
+
+          <div id="characters-track"
+            class="anime-track character-track">
+            <div class="loading-card">Carregando personagens...</div>
+          </div>
+          <p id="characters-status" class="characters-status"
+            role="status" aria-live="polite"></p>
+          <button id="characters-load-more" class="characters-load-more"
+            type="button" hidden>
+            Carregar mais personagens
+          </button>
+        </section>
+      </div>
+
+      <!-- RANKING LATERAL -->
+      <aside class="sidebar">
+        <div class="sidebar-heading">
+          <h2>Top trending animes</h2>
+          <span>EM ALTA</span>
+        </div>
+
+        <ol id="trending-list" class="trending-list">
+          <li>Carregando ranking...</li>
+        </ol>
+
+        <div class="sidebar-promo">
+          <span class="promo-label">GEEKVERSE</span>
+          <h3>Seu próximo anime favorito está aqui.</h3>
+          <p>Explore novidades, clássicos e recomendações.</p>
+          <button id="explore-button" type="button">
+            Explorar animes
+          </button>
+        </div>
+      </aside>
+    </section>
+
+    <div id="page-message" class="page-message"
+      role="status" aria-live="polite" hidden></div>
+
+    <!-- INSPETOR DA ATIVIDADE -->
+    <details class="api-inspector">
+      <summary>Inspecionar consulta à API AniList</summary>
+      <p>
+        O navegador consulta o servidor Express,
+        que envia uma requisição GraphQL à AniList.
+      </p>
+      <pre id="inspector">Aguardando consulta...</pre>
+    </details>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-column">
+      <h3>GeekVerse</h3>
+      <p>Seu universo geek em um só lugar.</p>
+      <a href="/index.html">Página inicial</a>
+    </div>
+
+    <div class="footer-column">
+      <h3>Explore o site</h3>
+      <a href="/sports.html">Esportes</a>
+      <a href="/figures.html">Figures</a>
+      <a href="/animes.html">Animes e mangás</a>
+    </div>
+
+    <div class="footer-column">
+      <h3>Comunidade</h3>
+      <a href="#">Instagram</a>
+      <a href="#">Discord</a>
+      <a href="#">Fale conosco</a>
+    </div>
+
+    <div class="footer-column">
+      <h3>Sobre</h3>
+      <p>Feito para quem vive a cultura geek.</p>
+      <span>© <span id="current-year"></span> GeekVerse</span>
+    </div>
+  </footer>
+
+  <!-- JANELA DE DETALHES -->
+  <dialog id="anime-dialog" class="anime-dialog">
+    <button class="dialog-close" id="dialog-close"
+      type="button" aria-label="Fechar">×</button>
+    <div id="dialog-content"></div>
+  </dialog>
+</body>
+</html>
