@@ -517,7 +517,7 @@ function falhaAniList(status, mensagem) {
   });
 }
 
-async function traduzirTexto(texto) {
+async function traduzirTexto(texto, translationStatus) {
   const original = typeof texto === "string" ? texto : "";
   const normalized = original.trim();
 
@@ -525,6 +525,7 @@ async function traduzirTexto(texto) {
   if (translationCache.has(normalized)) {
     return translationCache.get(normalized);
   }
+  if (!translationStatus.available) return original;
 
   try {
     const response = GOOGLE_TRANSLATE_API_KEY
@@ -533,7 +534,7 @@ async function traduzirTexto(texto) {
           { q: normalized, target: "pt", format: "text" },
           {
             params: { key: GOOGLE_TRANSLATE_API_KEY },
-            timeout: 15000
+            timeout: 2500
           }
         )
       : await axios.get(TRANSLATION_URL, {
@@ -544,7 +545,7 @@ async function traduzirTexto(texto) {
             dt: "t",
             q: normalized
           },
-          timeout: 15000
+          timeout: 2500
         });
 
     const translated = GOOGLE_TRANSLATE_API_KEY
@@ -564,24 +565,18 @@ async function traduzirTexto(texto) {
     translationCache.set(normalized, translated);
     return translated;
   } catch (error) {
-    if (error.statusHttp) throw error;
-
     const upstreamStatus = error.response?.status;
     console.error(
       "[Tradução para pt-BR]",
       upstreamStatus || error.message
     );
-
-    throw falhaAniList(
-      upstreamStatus === 429 ? 503 : 502,
-      upstreamStatus === 429
-        ? "O serviço de tradução atingiu o limite de consultas. Tente novamente."
-        : "Não foi possível traduzir os dados para português."
-    );
+    translationStatus.available = false;
+    translationStatus.partial = true;
+    return original;
   }
 }
 
-async function traduzirTextos(textos) {
+async function traduzirTextos(textos, translationStatus) {
   const resultadosUnicos = new Map();
   const textosUnicos = [...new Set(textos.filter(texto => texto.trim()))];
   let proximo = 0;
@@ -590,7 +585,10 @@ async function traduzirTextos(textos) {
     while (proximo < textosUnicos.length) {
       const texto = textosUnicos[proximo];
       proximo += 1;
-      resultadosUnicos.set(texto, await traduzirTexto(texto));
+      resultadosUnicos.set(
+        texto,
+        await traduzirTexto(texto, translationStatus)
+      );
     }
   }
 
@@ -601,12 +599,12 @@ async function traduzirTextos(textos) {
   return textos.map(texto => resultadosUnicos.get(texto) || texto);
 }
 
-async function traduzirMidias(media) {
+async function traduzirMidias(media, translationStatus) {
   const textos = media.flatMap(item => [
     item.title?.english || item.title?.romaji || "",
     item.description || ""
   ]);
-  const traducoes = await traduzirTextos(textos);
+  const traducoes = await traduzirTextos(textos, translationStatus);
 
   return media.map((item, index) => ({
     ...item,
@@ -638,9 +636,10 @@ function traduzirFormato(media) {
   }));
 }
 
-async function traduzirPersonagens(characters) {
+async function traduzirPersonagens(characters, translationStatus) {
   const descricoes = await traduzirTextos(
-    characters.map(character => character.description || "")
+    characters.map(character => character.description || ""),
+    translationStatus
   );
 
   return characters.map((character, index) => ({
@@ -708,7 +707,12 @@ function validarMidias(media) {
   return media;
 }
 
-async function normalizarPaginaAnime(page, pagina, paginaPersonagens) {
+async function normalizarPaginaAnime(
+  page,
+  pagina,
+  paginaPersonagens,
+  translationStatus
+) {
   if (!pagina || !Array.isArray(pagina.media)) {
     throw falhaAniList(
       502,
@@ -777,9 +781,15 @@ async function normalizarPaginaAnime(page, pagina, paginaPersonagens) {
 
   return {
     results: traduzirFormato(
-      await traduzirMidias(validarMidias(pagina.media))
+      await traduzirMidias(
+        validarMidias(pagina.media),
+        translationStatus
+      )
     ),
-    characters: await traduzirPersonagens(characters),
+    characters: await traduzirPersonagens(
+      characters,
+      translationStatus
+    ),
     pageInfo: {
       total: info.total + infoPersonagens.total,
       currentPage: info.currentPage,
@@ -789,7 +799,7 @@ async function normalizarPaginaAnime(page, pagina, paginaPersonagens) {
   };
 }
 
-async function normalizarCatalogo(data) {
+async function normalizarCatalogo(data, translationStatus) {
   if (!data) {
     throw falhaAniList(
       502,
@@ -807,7 +817,7 @@ async function normalizarCatalogo(data) {
     ...releases,
     ...recommendations,
     ...trending
-  ]);
+  ], translationStatus);
   const releasesPt = mediaTraduzida.slice(0, releases.length);
   const recommendationsPt = mediaTraduzida.slice(
     releases.length,
@@ -825,6 +835,7 @@ async function normalizarCatalogo(data) {
 
 app.get("/api/animes", async (req, res) => {
   let requisicao;
+  const translationStatus = { available: true, partial: false };
 
   try {
     const { q, page } = validarBuscaAnime(req.query);
@@ -874,20 +885,31 @@ app.get("/api/animes", async (req, res) => {
       const resultado = await normalizarPaginaAnime(
         page,
         data.Page,
-        data.characterSearch
+        data.characterSearch,
+        translationStatus
       );
 
       return res.json({
         ...resultado,
-        meta: { requisicao }
+        meta: {
+          requisicao,
+          avisoTraducao: translationStatus.partial
+            ? "Alguns títulos ou descrições não puderam ser traduzidos; exibindo o texto original."
+            : undefined
+        }
       });
     }
 
-    const catalogo = await normalizarCatalogo(data);
+    const catalogo = await normalizarCatalogo(data, translationStatus);
 
     return res.json({
       ...catalogo,
-      meta: { requisicao }
+      meta: {
+        requisicao,
+        avisoTraducao: translationStatus.partial
+          ? "Alguns títulos ou descrições não puderam ser traduzidos; exibindo o texto original."
+          : undefined
+      }
     });
 
   } catch (erro) {
@@ -927,6 +949,7 @@ app.get("/api/animes", async (req, res) => {
 
 app.get("/api/personagens", async (req, res) => {
   let requisicao;
+  const translationStatus = { available: true, partial: false };
 
   try {
     const pageText = req.query.page === undefined ? "1" : req.query.page;
@@ -1012,14 +1035,19 @@ app.get("/api/personagens", async (req, res) => {
     }
 
     return res.json({
-      results: await traduzirPersonagens(results),
+      results: await traduzirPersonagens(results, translationStatus),
       pageInfo: {
         total: info.total,
         currentPage: info.currentPage,
         lastPage: info.lastPage,
         hasNextPage: info.hasNextPage
       },
-      meta: { requisicao }
+      meta: {
+        requisicao,
+        avisoTraducao: translationStatus.partial
+          ? "Algumas descrições não puderam ser traduzidas; exibindo o texto original."
+          : undefined
+      }
     });
   } catch (erro) {
     const upstreamStatus = erro.response?.status;
