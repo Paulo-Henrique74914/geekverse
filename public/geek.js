@@ -203,7 +203,9 @@
       state.charactersPage = data.pageInfo.currentPage;
       renderTrack("#characters-track", state.characters, "character");
       status.textContent = data.pageInfo.total
-        ? `Exibindo ${state.characters.length} de ${data.pageInfo.total} personagens`
+        ? `Exibindo ${state.characters.length} de ${data.pageInfo.total} personagens${
+            data.meta?.avisoTraducao ? ` • ${data.meta.avisoTraducao}` : ""
+          }`
         : "Nenhum personagem encontrado.";
       button.hidden = !data.pageInfo.hasNextPage;
       button.disabled = false;
@@ -505,7 +507,8 @@
 
       showStatus(
         `${data.results.length} anime(s) e ` +
-          `${data.characters.length} personagem(ns) nesta página.`,
+          `${data.characters.length} personagem(ns) nesta página.` +
+          (data.meta?.avisoTraducao ? ` ${data.meta.avisoTraducao}` : ""),
         "sucesso"
       );
 
@@ -551,6 +554,7 @@
       state.trending = data.trending;
 
       renderHome();
+      showMessage(data.meta?.avisoTraducao || "");
       showInspector(data.meta?.requisicao);
 
     } catch (error) {
